@@ -2,6 +2,7 @@ const primeNumber = (n)=>{
     let i = 2
     const numbers = []
     const primes = []
+    const div = []
     while (i < n){
         numbers.push(i)
         i++
@@ -20,9 +21,14 @@ const primeNumber = (n)=>{
     primes.map(n => total += n)
 
     let j = 0
-    while (j < total)
+    while (j < total){
+        (total % j) === 0 ? div.push(j) : ''
+    }
+
+    return `${primes}, "${div}"`
 
 }
 
-primeNumber(10)
+let result = primeNumber(10)
+console.log(result)
 
